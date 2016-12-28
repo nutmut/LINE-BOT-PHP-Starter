@@ -20,10 +20,6 @@ if (!is_null($events['events'])) {
 			$messages = [
 				{'type' => 'text',
 				 'text' => $text
-				},
-				{
-				 'type' => 'text',
-				 "Yo! What's up. How can I help you?" => $text
 				}
 			];
 
