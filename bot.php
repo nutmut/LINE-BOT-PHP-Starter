@@ -22,7 +22,6 @@ if (!is_null($events['events'])) {
 			switch ($text) {
 				case 'hi' :
 					$replyText = "hello! how are you? ";
-					$replyText += $sticker;
 				break;
 				case 'fine' :
 					$replyText = "good to heard that. hope you have a nice day!. The weather is getting cold now. Take care yourself :)";
@@ -46,23 +45,12 @@ if (!is_null($events['events'])) {
 				'text' => $replyText
 			];
 
-			//Build sticker
-			$sticker = [
-			 'constantType':8,
-			 'contentMetadata':{
-       		 	'stkid'    => 219,    # contentMetadata.STKID
-       		 	'stkpkgid' => 3,    # contentMetadata.STKPKGID
-       		 	'stkver'   => 100,    # contentMetadata.STKVER
-       		 	}
-			];
-
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
-				'sticker' => [$sticker],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
