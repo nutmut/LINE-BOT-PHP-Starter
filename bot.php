@@ -11,6 +11,15 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+		
+		// Sent sticker
+			$res = $bot->send_sticker(
+       		 'to_mid' => $mid,
+       		 'stkid'    => 219,    # contentMetadata.STKID
+       		 'stkpkgid' => 3,    # contentMetadata.STKPKGID
+       		 'stkver'   => 100,    # contentMetadata.STKVER
+       		 );
+
 			// Get text sent
 			$text = $event['message']['text'];
 			
@@ -19,6 +28,7 @@ if (!is_null($events['events'])) {
 			switch ($text) {
 				case 'hi' :
 					$replyText = "hello! how are you? ";
+					$replyText += $res;
 				break;
 				case 'fine' :
 					$replyText = "good to heard that. hope you have a nice day!. The weather is getting cold now. Take care yourself :)";
@@ -27,7 +37,7 @@ if (!is_null($events['events'])) {
 					$replyText = "nothing so much~";
 				break;
 				case 'miss' :
-					$replyText = "thank you <3";
+					$replyText = "thank you (heart)";
 				break;
 				default:
 					$replyText = $text;
