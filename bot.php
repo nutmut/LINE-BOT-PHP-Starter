@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 				case 'fine' :
 					$replyText = "good to heard that. hope you have a nice day!. The weather is getting cold now. Take care yourself :)";
 				break;
-				case 'wyd' :
+				case 'wyd?' :
 					$replyText = "nothing so much~";
 				break;
 				case 'miss' :
