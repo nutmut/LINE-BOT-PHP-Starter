@@ -16,11 +16,22 @@ if (!is_null($events['events'])) {
 			
 			$replyText = "";
 			
-			if ($text=='hi'||$text=='hello') $replyText = "Hi!! How was your day?";
-			else if ($text=='how are you') $replyText = "I'm fine! but it's getting cold now. take care yourself please. :)";
-			else if ($text=='wyd') $replyText = "nothing so much";
-			
-			else $replyText = $text;
+			switch ($text) {
+				case 'hi' :
+					$replyText = "hello! how are you? ";
+				break;
+				case 'fine' :
+					$replyText = "good to heard that. hope you have a nice day!. The weather is getting cold now. Take care yourself :)";
+				break;
+				case 'wyd' :
+					$replyText = "nothing so much~";
+				break;
+				case 'miss' :
+					$replyText = "thank you <3";
+				break;
+				default:
+					$replyText = $text;
+			}
 			
 			// Get replyToken
 			$replyToken = $event['replyToken'];
