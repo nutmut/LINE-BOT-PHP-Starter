@@ -1,6 +1,5 @@
 <?php
 $access_token = '4x7QqBNZJB8L62ZOJpyi2PdOrix7CVvI9z1gCHSZTGsbxW8BQb0lIDPXK7LFG525k/O4zAsNf/BgMwjc5rqSjL3Co6YCzT9tFWfmNqc4X7wXeRKWwB1ZpbgYHNnIE4s76wUhy7Wfd5sYIXnZCQOqXQdB04t89/1O/w1cDnyilFU=';
-$mid='https://pacific-spire-34476.herokuapp.com/bot.php'
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
